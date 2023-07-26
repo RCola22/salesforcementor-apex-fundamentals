@@ -33,11 +33,11 @@ public with sharing class InvoiceCalculatorSolution {
 
         //Print out how much additional money you need to ask for to make up the fees
         //Hint: (amount / (1 - 3%)) * 3%
-        Decimal feeCorrectionAmount = ((invoiceAmount / (1 - PERCENTAGE_FEE)) * PERCENTAGE_FEE);
+        Decimal feeCorrectionAmount = ((invoiceAmount / (1 - PERCENTAGE_FEE)) * PERCENTAGE_FEE).setScale(2);
         System.debug('Additional amount needed to actually get invoice amount is ' + feeCorrectionAmount);
 
         //Print out the new total of much you should ask for to meet the original invoice amount with fees
-        Decimal newInvoiceAmount = (feeCorrectionAmount + FLAT_FEE + invoiceAmount);
+        Decimal newInvoiceAmount = (feeCorrectionAmount + FLAT_FEE + invoiceAmount).setScale(2);
         System.debug('New invoice total amount is ' + newInvoiceAmount);
     }
 
