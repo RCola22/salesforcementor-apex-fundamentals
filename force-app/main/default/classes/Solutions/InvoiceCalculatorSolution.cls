@@ -8,6 +8,7 @@ public with sharing class InvoiceCalculatorSolution {
     Example: https://weareindy.com/stripe-fee-calculator (Not exact with rounding)
      */
     public static void calculateInvoiceAmountPart1(){
+        //Use this method in apex anon window to execute apex script: InvoiceCalculator.calculateInvoiceAmountPart1(),
         //Every transaction has a flat fee of 30 cents and this never changes
         final Decimal FLAT_FEE = 0.30;
         //Every transaction has a percentage based fee 3% and this never changes
